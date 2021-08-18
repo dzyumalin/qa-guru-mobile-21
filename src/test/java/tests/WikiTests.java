@@ -13,36 +13,41 @@ import static io.qameta.allure.Allure.step;
 public class WikiTests extends TestBase {
 
     @Test
-    @DisplayName("Onborading page test")
-    void onboardingPageTest() {
+    @DisplayName("Getting started page test")
+    void checkContentTest() {
         step("Open app", () -> {
             open();
         });
 
-        step("Onboarding page should have text 'The Free Encyclopedia …in over 300 languages'", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("The Free Encyclopedia …in over 300 languages"));
+        step("Main content verification", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
         });
 
         step("Click continue", () ->
                 $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
 
-        step("Check title is [New ways to explore]", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("New ways to explore"));
+        step("New ways to explore", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("New ways to explore"));
         });
 
         step("Click continue", () ->
                 $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
 
-        step("Check title is [Reading lists with sync]", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Reading lists with sync"));
+        step("Reading lists with sync", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/secondaryTextView"))
+                    .shouldHave(text("Join Wikipedia"));
         });
 
         step("Click continue", () ->
                 $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click());
 
-        step("Check title is [Send anonymous data]", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Send anonymous data"));
+        step("Send anonymous data. Checkbox check", () -> {
+                $(MobileBy.id("org.wikipedia.alpha:id/switchView"))
+                        .shouldHave(text("ON")).click();
+                $(MobileBy.id("org.wikipedia.alpha:id/switchView"))
+                        .shouldHave(text("OFF"));
         });
-
     }
 }

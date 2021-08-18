@@ -22,7 +22,6 @@ public class SelenoidDriver {
                 Project.deviceConfig.hubPassword());
 
         Configuration.browserCapabilities = capabilities;
-
     }
 
 }

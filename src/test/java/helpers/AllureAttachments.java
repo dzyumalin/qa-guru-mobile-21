@@ -36,7 +36,6 @@ public class AllureAttachments {
         switch(driver) {
             case "SelenoidDriver":
                 sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-                SelenoidDriver.configure();
                 addScreenshotAs("Last screenshot");
                 addPageSource();
                 closeWebDriver();
