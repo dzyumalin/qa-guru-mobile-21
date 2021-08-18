@@ -8,5 +8,8 @@
 * local launch with Android emulator
 > gradle clean test -DdeviceHost=local
 
+* remote launch with Android device
+> gradle clean test -DdeviceHost=device
+
 * remote launch Web test 
 > gradle clean test -DdeviceHost=selenoid
