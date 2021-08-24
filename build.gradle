@@ -43,8 +43,8 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
-    if (System.getProperty("device.host") == null)
-        System.setProperty("device.host", "local")
+    if (System.getProperty("deviceHost") == null)
+        System.setProperty("deviceHost", "selenoid")
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
