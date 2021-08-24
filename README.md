@@ -1,6 +1,6 @@
 # Practice **Mobile automation #2**
 
-**Launch test in the terminal:**
+**Launch tests in the terminal:**
 
 * browserstack
 > gradle clean test -DdeviceHost=browserstack
@@ -13,3 +13,11 @@
 
 * remote launch Web test 
 > gradle clean test -DdeviceHost=selenoid
+
+**Launch tests in the jenkins:**
+
+* browserstack (browserstack)
+> clean mobile -DdeviceHost=${DEVICE_HOST}
+
+* launch Web test (selenoid) 
+> clean web -DdeviceHost=${DEVICE_HOST}
