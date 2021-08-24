@@ -58,4 +58,5 @@ public class WikiTests extends TestBase {
                         .shouldHave(text("OFF"));
         });
     }
+
 }
